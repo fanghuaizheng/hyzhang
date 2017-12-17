@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <!--<meta charset="UTF-8"/>-->
+ <title>会盈自传</title>
+ <link rel="stylesheet" href="/wishWall/css/jquery.fullPage.css"/>
+ <link rel="stylesheet" href="/wishWall/css/style.css"/>
+
+    <!--心跳的样式start-->
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+        @import url(http://fonts.googleapis.com/css?family=Hammersmith+One);
+
+        body {
+            background-color: #ccc;
+        }
+        .container {
+            width: 512px;
+            height: 380px;
+            margin: auto;
+            margin-top: 0;
+        }
+
+        .heart {
+            z-index: 1;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 50%;
+            margin-top: -75px;
+            left: 50%;
+            margin-left: -75px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image:url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjE3M3B4IiBoZWlnaHQ9IjE1OHB4IiB2aWV3Qm94PSIwIDAgMTczIDE1OCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTczIDE1OCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjRUY0NjU3IiBkPSJNMTU3LjMzMSwxNS41MDRjLTE5LjU1OS0xOS41NTktNTEuMjcxLTE5LjU1OS03MC44MzEsMGMtMTkuNTU5LTE5LjU1OS01MS4yNzEtMTkuNTU5LTcwLjgzMSwwDQoJYy0xOS41NTksMTkuNTU5LTE5LjU1OSw1MS4yNzEsMCw3MC44MzFsNzAuODMxLDcwLjgzbDcwLjgzMS03MC44M0MxNzYuODksNjYuNzc1LDE3Ni44OSwzNS4wNjQsMTU3LjMzMSwxNS41MDR6Ii8+DQo8L3N2Zz4=");
+        }
+        .hometown {
+            font-family:'Inconsolata', sans-serif;
+            font-weight: bold;
+            font-size: 2.0em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            width: 512px;
+            height: 512px;
+            color: #FFF;
+        }
+        #top {
+            width: 200px;
+            margin: auto;
+            position: relative;
+        }
+        #top span {
+            height: 350px;
+            position: absolute;
+            width: 20px;
+            left: 50%;
+            margin-left: -10px;
+            top: 110px;
+        }
+        .char1 {
+            transform: rotate(-36deg);
+        }
+        .char2 {
+            transform: rotate(-24deg);
+        }
+        .char3 {
+            transform: rotate(-12deg);
+        }
+        .char4 {
+            transform: rotate(0deg);
+        }
+        .char5 {
+            transform: rotate(12deg);
+        }
+        .char6 {
+            transform: rotate(24deg);
+        }
+        .char7 {
+            transform: rotate(36deg);
+        }
+
+        #bottom span {
+            height: 350px;
+            line-height: 700px;
+            position: absolute;
+            width: 20px;
+            left: 50%;
+            margin-left: -10px;
+            top: 10px;
+        }
+
+        #bottom .char1 {
+            transform: rotate(36deg);
+        }
+        #bottom .char2 {
+            transform: rotate(27deg);
+        }
+        #bottom .char3 {
+            transform: rotate(18deg);
+        }
+        #bottom .char4 {
+            transform: rotate(9deg);
+        }
+        #bottom .char5 {
+            transform: rotate(0deg);
+        }
+        #bottom .char6 {
+            transform: rotate(-9deg);
+        }
+        #bottom .char7 {
+            transform: rotate(-18deg);
+        }
+        #bottom .char8 {
+            transform: rotate(-27deg);
+        }
+        #bottom .char9 {
+            transform: rotate(-36deg);
+        }
+
+        .city {
+            font-family:"Hammersmith One";
+            display: inline-block;
+            width: 100%;
+            height: 300px;
+            padding-top: 45px;
+            text-align: center;
+            font-size: 3.0em;
+            z-index: 100;
+            position: absolute;
+            top: 50%;
+            margin-top: -110px;
+        }
+
+        .heart {
+            animation: HEARTBEAT 2.5s infinite;
+        }
+        #top span {
+            animation: BOUNCE 2.5s infinite;
+        }
+
+        @keyframes HEARTBEAT {
+            0% {
+                transform: scale(1);
+            }
+            5% {
+                transform: scale(1.3);
+            }
+            10% {
+                transform: scale(1.1);
+            }
+            15% {
+                transform: scale(1.5);
+            }
+            50% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes BOUNCE {
+            0% {
+                top: 110px;
+            }
+            10% {
+                top: 80px;
+            }
+            15% {
+                top: 85px;
+            }
+            20% {
+                top: 70px;
+            }
+            75% {
+                top: 110px;
+            }
+            100% {
+                top: 110px;
+            }
+        }
+
+    </style>
+    <!--心跳的样式end-->
+
+    <script src="/wishWall/js/prefixfree.min.js"></script>
+</head>
+
+
+<body>
+<div class="bgcolor">
+  <div style="z-index:100;" id="dowebok">
+      <!--第一屏-->
+      <div class="section">
+          <div class="ly-box01">
+            <div class="ly-txt01">
+              <p class="ly-stxt01">N（92）年前的寒冬时候</p>
+              <p class="ly-stxt02">一位宝妈静静的等着孩子出生，</p>
+              <p class="ly-stxt03">她就是这篇自传的主人公：张会盈</p>
+                <p class="ly-stxt04">外号：小辣椒，英文名：small pepper</p>
+              <p class="ly-stxt05">天朗气清，孩子出生的很顺利</p>
+            </div>
+            <div class="ly-txt02">
+                 <p class="ly-stxt06">总章</p>
+              <p class="ly-stxt06">一岁一岁，她长大了</p>
+              <p class="ly-stxt07">直到2015年，我们的会盈开始结束了</p>
+              <p class="ly-stxt08">象牙塔下的生活</p>
+              <p class="ly-stxt09">进入社会</p>
+              <p class="ly-stxt10">让我们坐上时光机，走一边吧……</p>
+            </div>
+        </div>
+      </div> 
+
+      <!--第二屏-->
+
+      <div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint11"></div>
+          <div class="ly-box11">
+              <div class="ly-txt11">
+                  2014-09-20
+              </div>
+              <div class="ly-txt12">
+                  这天，是会盈开启微信的生活点，也是我能追溯到的最早时间节点，看看
+              </div>
+              <div class="ly-imgbox11">
+                <img class="ly-img11" src="/wishWall/img/2014.09.20.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle11"></div>
+
+          <div class="ly-box12">
+              <div class="ly-txt13">
+                  2014-09-21
+              </div>
+              <div class="ly-txt14">
+                 <p>会盈</p>
+			     <p>人生靠的住的，不止自己，还有亲人，家人</p>
+			     <p>远方的天空还是湛蓝色</p>
+				 <p>冬天还有白雪，夏天还有火烧云</p>
+				 <p>为什么不试着了解这个世界？</p>
+              </div>
+          </div>
+          <div class="ly-triangle12"></div>
+      </div>
+
+      <!--第三屏-->
+
+      <div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint21"></div>
+          <div class="ly-box21">
+              <div class="ly-txt21">
+                  2014-09-20
+              </div>
+              <div class="ly-txt22">
+                 <p> 会盈说：</p>
+				         <p>既然认准了一条路，何必去打听还要走多久</p>
+              </div>
+              <div class="ly-imgbox21">
+                <img class="ly-img21" src="/wishWall/img/2014.0930.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle21"></div>
+
+          <div class="ly-box22">
+              <div class="ly-txt23">
+                  2014-09-30
+              </div>
+              <div class="ly-txt24">
+                  但是30号，会盈认为，人本无错，我要做一个不动声色的人。
+              </div>
+              <div class="ly-imgbox22">
+                <img class="ly-img22" src="/wishWall/img/2014.0930.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle22"></div>
+
+           <div class="ly-box23">
+              <div class="ly-txt25">
+                  2014-10-03
+              </div>
+              <div class="ly-txt26">
+                  一夜无眠
+              </div>
+              <div class="ly-imgbox23">
+                <img class="ly-img23" src="/wishWall/img/20141003.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle23"></div>
+      </div>
+
+      <!--第四屏-->
+
+      <div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint31"></div>
+          <div class="ly-box31">
+              <div class="ly-txt31">
+                  2014-10-09
+              </div>
+              <div class="ly-txt32">
+                  <p>礼貌是一种陌生，胡闹只一种依赖。</p>
+				          <p>不知道我们有没有幸运得到会盈的胡闹呢？</p>
+              </div>
+              <div class="ly-imgbox31">
+                <img class="ly-img23" src="/wishWall/img/20141009.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle31"></div>
+
+          <div class="ly-box32">
+              <div class="ly-txt33">
+                  2014-10-10
+              </div>
+              <div class="ly-txt34">
+                 <p>会盈到北京跟家人团聚了，还包了饺子哦，大家来看看</p>
+              </div>
+              <div class="ly-imgbox31">
+                <img class="ly-img31" src="/wishWall/img/20141010.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle32"></div>
+      </div> 
+
+  <!--第五屏-->
+  <div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint21"></div>
+          <div class="ly-box52">
+              <div class="ly-txt21">
+                  2014-11-15
+              </div>
+              <div class="ly-txt22">
+                 <p> 会盈晒出来，她的第一张，披着的秀发照片</p>
+				         <p>在这里，我不想说什么，只能偷偷的评价一句，古人诚不欺我，长发飘飘，仙女下凡，就是眼光瞄哪里去了啊？</p>
+              </div>
+              <div class="ly-imgbox21">
+                <img class="ly-img21" src="/wishWall/img/20141115.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle21"></div>
+
+          <div class="ly-box22">
+              <div class="ly-txt23">
+                  2015-04-16
+              </div>
+              <div class="ly-txt51">
+                  <p>15年，是会盈人生最大的转折点</p>
+				          <p>因为今年她要毕业来。。。。。这个时间节点是累成狗的时候</p>
+              </div>
+              <div class="ly-imgbox22">
+                <img class="ly-img22" src="/wishWall/img/20150416.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle22"></div>
+
+           <div class="ly-box51">
+              <div class="ly-txt25">
+                  2015-05-02
+              </div>
+              <div class="ly-txt26">
+                  <p>五一，我们都是出去玩了，但是会盈因为论文的事情，</p>
+				  <p>还需要做ppt，加班加点</p>
+				  <p>让我们为这位勤劳的人儿</p>
+				  <p>说一声：你，幸苦了。。。。</p>
+              </div>
+              <div class="ly-imgbox23">
+                <img class="ly-img23" src="/wishWall/img/20150502.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle23"></div>
+      </div>
+
+  <!--第六屏-->
+  <div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint21"></div>
+          <div class="ly-box21">
+              <div class="ly-txt21">
+                  2015-06-29
+              </div>
+              <div class="ly-txt22">
+                 <p>会盈毕业了,时间是一个奇妙的东西，因为万物都有正反，唯独时间没有</p>
+                 <p>他只会不停的蚕食你余下的时光，而你只能睁眼看着</p>
+              </div>
+              <div class="ly-imgbox21">
+                <img class="ly-img21" src="/wishWall/img/20160629.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle21"></div>
+
+          <div class="ly-box22">
+              <div class="ly-txt23">
+                  2015-12-12
+              </div>
+              <div class="ly-txt24">
+                  <p>今天竟然是会盈的生日，咋办。。。。咋办。。。。</p>
+				 <p>凉拌。。。。会盈的老姐，给她发了大大的红包，可惜没有看到蛋糕，好想吃蛋糕</p>
+				 <p>只能到网上搜图看看</p>
+              </div>
+              <div class="ly-imgbox22">
+                <img class="ly-img22" src="/wishWall/img/20151212.jpg"/>
+              </div>
+          </div>
+          <div class="ly-triangle22"></div>
+
+           <div class="ly-box23">
+              <div class="ly-txt25">
+                  2016-04-30
+              </div>
+              <div class="ly-txt61">
+                  <p class="wwww1">时间飞逝啊，没想到这次的时间节点竟然到四月三十了，</p>
+				  <p class="wwww1">今天难道会发生什么吗？大家好奇没有，那么偷偷记录一下吧</p>
+				  <p class="wwww1">今天咱去苏州玩了,照了好多美美的照片</p>
+				  <p class="wwww1">我来评价下吧，那会儿的会盈萌萌哒</p>
+				  <p class="wwww1">不知道大家看过《小鲤鱼历险记》没有</p>
+				  <p class="wwww1">没看过，那么请看会盈的美美哒的照</p>
+              </div>
+              <div class="ly-imgbox61">
+                <img class="ly-img61" src="/wishWall/img/20160430.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle23"></div>
+      </div>
+
+      <!--第七屏-->
+      <div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint71"></div>
+          <div class="ly-box21 xx71">
+              <div class="ly-txt21">
+                  2016-05-14
+              </div>
+              <div class="ly-txt22">
+                 <p> 如果时间可以回溯，那么我想回到这个时间点，因为我看到来，
+                     好多的书啊，我想告诉她，你是最棒的</p>
+
+              </div>
+              <div class="ly-imgbox21">
+                <img class="ly-img21" src="/wishWall/img/20160514.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle21 xx72"></div>
+
+          <div class="ly-box71">
+              <div class="ly-txt23">
+                  2016-07-02
+              </div>
+              <div class="ly-txt71">
+                  <p>今天不开森，因为我们的会盈也不开心，原因事啥呢？原来就是没有辣条啊……没事，以后天天买辣条给你
+                    让你成为真正的小辣椒</p>
+              </div>
+              <div class="ly-imgbox71">
+                <img class="ly-img71" src="/wishWall/img/20160702.png"/>
+              </div>
+          </div>
+          <div class="ly-triangle22"></div>
+
+           <div class="ly-box72">
+              <div class="ly-txt25">
+                  2016-07-05
+              </div>
+              <div class="ly-txt72">
+                  <p>因为前几天小辣椒，没有吃到辣条，感冒来，咋破啊……只能怪我来，竟然没有即时认识她，递上我的感冒药</p>
+              </div>
+              <div class="ly-imgbox72">
+                <img class="ly-img72" src="/wishWall/img/20160705.png"/>
+              </div>
+          </div>
+          <div class="ly-triangle71"></div>
+
+          <div class="ly-box73">
+              <div class="ly-txt25">
+                  2016-12-27
+              </div>
+              <div class="ly-txt73">
+                  <p>刷……刷……时间来到来，抢票时节，但是会盈竟然没有抢到票，告诉我啊……我会刷票的哦</p>
+              </div>
+              <!--<div class="ly-imgbox73">-->
+                <!--<img class="ly-img73" src="/wishWall/img/20161227.png"/>-->
+              <!--</div>-->
+          </div>
+          <div class="ly-triangle72"></div>
+      </div>
+
+      <!--第八屏-->
+
+      <div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint11"></div>
+          <div class="ly-box81">
+              <div class="ly-txt11">
+                  2017-05-12
+              </div>
+              <div class="ly-txt82">
+                  路黑黑……天黑黑……走小黑路，你怕不怕？肯定怕，但是你坚强的走下去来，咱的女强人……
+              </div>
+              <div class="ly-imgbox81">
+                <img class="ly-img81" src="/wishWall/img/20170512.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle11"></div>
+
+          <div class="ly-box82">
+              <div class="ly-txt13">
+                  2017-08-11
+              </div>
+              <div class="ly-txt84">
+                 <p class="wwww1">今天加班来，我好像也加班来着，嘿嘿……终于，我出场来</p>
+				 <p class="wwww1">以前的那么多时间节点，我从来没有参与在她的生活里面</p>
+				 <p class="wwww1">但是我要说的是，你要加班，那么我便陪你加班</p>
+				 <p class="wwww1">因为你是苦逼的前端大神，我是后端的小渣渣啊</p>
+              </div>
+              <!--<div class="ly-imgbox81">-->
+                  <!--<img class="ly-img81" src="/wishWall/img/bug.JPG"/>-->
+              <!--</div>-->
+          </div>
+
+      </div>
+
+      <!--第九屏-->
+
+<div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint91"></div>
+          <div class="ly-box21 xx91">
+              <div class="ly-txt21">
+                  2017-09-23
+              </div>
+              <div class="ly-txt90">
+                 <p>今天吴老铁买了一个蛋糕过来，会盈好开心，吃到蛋糕，但是我不开心，因为我也买了，
+                     但是我的蛋糕不好看，没能让会盈留下影响，在此记下那个好看的蛋糕吧，虽然我也吃了不少</p>
+              </div>
+              <div class="ly-imgbox21 xx94">
+                <img class="ly-img21" src="/wishWall/img/20170923.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle21 xx92"></div>
+
+          <div class="ly-box91">
+              <div class="ly-txt23">
+                  2017-10-03
+              </div>
+              <div class="ly-txt91">
+                  <p>这个国庆节，不是一个好日子，因为会盈加班去来，但是我吹的牛，说你加班，那么我便陪你加班的诺言，
+                    竟然没有实现。。。。苦恼耶……哎……来一波二叹气</p>
+              </div>
+              <div class="ly-imgbox91">
+                <img class="ly-img91" src="/wishWall/img/20171003.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle22 xx92"></div>
+
+           <div class="ly-box92">
+              <div class="ly-txt25">
+                  2017-11-11
+              </div>
+              <div class="ly-txt92">
+                  <p>向来心是看客心，奈何人是剧中人</p>
+              </div>
+              <div class="ly-imgbox92">
+                <img class="ly-img92" src="/wishWall/img/20171111.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle91"></div>
+
+          <div class="ly-box93">
+              <div class="ly-txt25">
+                  2017-11-27
+              </div>
+              <div class="ly-txt93">
+                  <p>赖皮的让会盈，跟我，两人围着小池塘，走圈圈，她说：心之所向 素履以往 生如逆旅 一苇以航</p>
+              </div>
+              <div class="ly-imgbox93">
+                <img class="ly-img93" src="/wishWall/img/20171127.JPG"/>
+              </div>
+          </div>
+          <div class="ly-triangle92"></div>
+      </div>
+		<!--第十屏-->
+
+		      <div class="section">
+          <div class="timeline"></div>
+          <div class="timepoint11"></div>
+          <div class="ly-box81">
+              <div class="ly-txt11">
+                  2017-12-19
+              </div>
+              <div class="ly-txt82" style="top:8%">
+                  <p class="wwww1">今天会盈生日</p>
+                  <p class="wwww1">生日快乐……生日快乐……</p>
+                  <p class="wwww1">不知道如何的跟你说一些话</p>
+				  <p class="wwww1">因为怕跟你说了，就再也没有机会跟你正常的聊天来</p>
+				  <p class="wwww1">哎……还是没有胆子说啊……</p>
+				  <p class="wwww1">小心翼翼，只想陪着你过以后的每一次生日</p>
+				  <p class="wwww1">跟你说一声：会盈生日快乐</p>
+              </div>
+              <div class="ly-imgbox81">
+                <img class="ly-img81" src="/wishWall/img/20171229.png"/>
+              </div>
+          </div>
+          <div class="ly-triangle11"></div>
+
+          <div class="ly-box82">
+              <div class="ly-txt13">
+                  2017-12-19
+              </div>
+              <div class="ly-txt84">
+                 <!--<p>找了一首诗，虽然不能表现我的感觉，但是能……</p>-->
+				 <!--<p><span style="color: mediumblue">会</span>须击节溯中流,<span style="color: mediumblue">盈</span>数已登蓬莱山</p>-->
+				 <!--<p><span style="color: mediumblue">生</span>羡鸡冠与凤仙,<span style="color: mediumblue">日</span>长帘暮望黄昏。</p>-->
+				 <!--<p><span style="color: mediumblue">快</span>风一箭轻帆举,<span style="color: mediumblue">乐</span>此生有你陪伴</p>-->
+				 <!--<p>期望你喜欢</p>-->
+                  <div class="container bg">
+                      <div class="hometown">
+                          <div class="heart">
+                          </div>
+                          <div id="top">生日   生日</div>
+                          <div class="city">会盈</div>
+                          <div id="bottom">快乐     快乐</div>
+                      </div>
+
+
+                      </div>
+                  <div><a href="/wishWall/wishWall">进入祝福墙</a></div>
+                  <!--<link href="index_heart.html"/>-->
+              </div>
+          </div>
+          <div class="ly-triangle82"></div>
+      </div>
+
+       </div>
+
+    <div style="text-align:center;clear:both">
+        <!--<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>-->
+        <!--<script src="/follow.js" type="text/javascript"></script>-->
+    </div>
+    <script src='/wishWall/js/jquery.js'></script>
+    <script src='/wishWall/js/jquery.lettering.js'></script>
+
+    <script src="/wishWall/js/index.js"></script>
+
+  <!--试验-->
+  <ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+  </div>
+  <!--<audio src="/wishWall/music/1.mp3" autoplay="autoplay" loop="loop"/>-->
+
+<script src="/wishWall/js/jquery-1.8.3.min.js"></script>
+<script src="/wishWall/js/jquery.fullPage.min.js"></script>
+<script src="/wishWall/js/diy.js"></script>
+</body>
+</html>
